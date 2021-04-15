@@ -7,3 +7,5 @@ copied container amount to match office hour amounts<br>
 created let variables per container<br>
 created ready function<br>
 created string for date layout<br>
+let variable created for time and date block <br>
+listener for text area click created<br>
