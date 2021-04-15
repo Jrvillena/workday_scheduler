@@ -9,3 +9,5 @@ created ready function<br>
 created string for date layout<br>
 let variable created for time and date block <br>
 listener for text area click created<br>
+created an hour string to read as a 12 hour format<br>
+created a string to load and save to local storage<br>
