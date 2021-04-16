@@ -15,6 +15,6 @@ changed color codes for past, present, and future times<br>
 created assets folder for css and javascipt sheets<br>
 added screen shot<br>
 direct repo - https://github.com/Jrvillena/workday_scheduler<br>
-landing page - https://jrvillena.github.io/workday_scheduler/<br>
+landing page - https://github.com/Jrvillena/workday_scheduler/tree/master<br>
 ![img](assets/images/screenshot_1.png)<br>
 ![img](assets/images/screenshot_2x.png)
