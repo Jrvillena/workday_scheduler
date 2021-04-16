@@ -16,4 +16,4 @@ created assets folder for css and javascipt sheets<br>
 added screen shot<br>
 direct repo - https://github.com/Jrvillena/workday_scheduler<br>
 landing page - https://jrvillena.github.io/workday_scheduler/<br>
-![img][screenshot/Screen Shot 2021-04-16 at 8.40.36 AM.png/]
+![img](screenshot/Screen Shot 2021-04-16 at 8.40.36 AM.png/)
