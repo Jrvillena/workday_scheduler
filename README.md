@@ -17,4 +17,4 @@ added screen shot<br>
 direct repo - https://github.com/Jrvillena/workday_scheduler<br>
 landing page - https://jrvillena.github.io/workday_scheduler/<br>
 ![img](assets/images/screenshot_1.png)<br>
-![img](assets/images/screenshot_2.png)
+![img](assets/images/screenshot_2x.png)
