@@ -8,7 +8,9 @@ let workDay = {
     "2 PM": "",
     "3 PM": "",
     "4 PM": "",
+    "5 PM": "",
   };
+  
   $(document).ready(function(){
     if(!localStorage.getItem('workDay')) {
       updateCalendarTasks(workDay);
@@ -16,31 +18,34 @@ let workDay = {
       updateCalendarTasks(JSON.parse(localStorage.getItem('workDay')));
     }
   })
+  
   $('#date-today h6').text(moment().format('dddd') + ", " + moment().format('MMMM Do YYYY, h:mm:ss a'));
-
+  
   let counter = 1;
-for(const property in workDay) {
-  let textEntry = "#text-entry" + counter;
-  $(textEntry).text(workDay[property]);
-  let timeId = "#time" + counter;
-  let presentHour = moment().hour();
-  let timeString = $(timeId).text();
-  let timeNumber = hourNumberFromHourString(timeString);  
-  if(timeNumber < presentHour) {
-    $(textEntry).addClass("past-hour");
-  } else if (timeNumber > presentHour) {
-    $(textEntry).addClass("future-hour");
-  } else {
-    $(textEntry).addClass("present-hour");
+  for(const property in workDay) {
+    let textEntry = "#text-entry" + counter;
+    $(textEntry).text(workDay[property]);
+    let timeId = "#time" + counter;
+    let presentHour = moment().hour();
+    let timeString = $(timeId).text();
+    let timeNumber = hourNumberFromHourString(timeString);  
+    if(timeNumber < presentHour) {
+      $(textEntry).addClass("past-hour");
+    } else if (timeNumber > presentHour) {
+      $(textEntry).addClass("future-hour");
+    } else {
+      $(textEntry).addClass("present-hour");
+    }
+    counter ++;
   }
-  counter ++;
-}
-$("button").click(function() {
+  
+  $("button").click(function() {
     value = $(this).siblings("textarea").val();
     hourString = $(this).siblings("div").text();
     
     saveSchedule(hourString, value);
   });
+  
   function hourNumberFromHourString(hourString) {
     switch(hourString) {
       case "8 AM": return 8;
@@ -55,6 +60,7 @@ $("button").click(function() {
       case "5 PM": return 17;
     }
   }
+  
   function loadCorrectDataset() {
     result = localStorage.getItem('workDay')
     return (result ? result : workDay);
@@ -72,15 +78,16 @@ $("button").click(function() {
     if(!localStorage.getItem('workDay')) {
       initializeLocalStorage();
     }
+  
     let workHours = JSON.parse(localStorage.getItem('workDay'));
-  workHours[hourString] = val
-
-  saveToLocalStorage(workHours);
-}
-
-function updateCalendarTasks(dayObject) {
-  $(".calendar-row").each(function(index) {
-    let res = $(this).children("div");
-    $(this).children("textarea").text(dayObject[res.text()]);
-  })
-}
+    workHours[hourString] = val
+  
+    saveToLocalStorage(workHours);
+  }
+  
+  function updateCalendarTasks(dayObject) {
+    $(".calendar-row").each(function(index) {
+      let res = $(this).children("div");
+      $(this).children("textarea").text(dayObject[res.text()]);
+    })
+  }
